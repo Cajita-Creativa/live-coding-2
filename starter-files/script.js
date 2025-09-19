@@ -8,8 +8,13 @@ function fetchAnswer() {
         console.log("Respuesta de la API:", data);
     const answerDiv = document.getElementById("answer");
         answerDiv.textContent = data.answer; 
+    setTimeout(() => {
+        answerDiv.textContent = "";
+        }, 5000);
     })
     .catch(error => {
         console.error("Error en la petición:", error);
     });
 }
+const button = document.getElementById("button");
+button.addEventListener("click", fetchAnswer);
